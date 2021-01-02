@@ -1,0 +1,8 @@
+header {
+    color: hsl(0, 0%, 100%);
+    font-weight: 700;
+}
+
+body {
+    background-color: hsl(345, 95%, 68%);
+}
