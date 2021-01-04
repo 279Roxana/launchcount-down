@@ -37,3 +37,7 @@ body {
     border-bottom: 130px solid hsl(234, 17%, 12%);
     z-index: 1;
 }
+
+div {
+    border-color: red;
+}
