@@ -38,6 +38,14 @@ body {
     z-index: 1;
 }
 
-div {
-    border-color: red;
+.days, .hours, .minutes, .seconds {
+    border: 5px solid red;
+    
+    z-index: 1;
+}
+.countBox {
+    border: 10px solid magenta;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

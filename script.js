@@ -1,77 +1,60 @@
 
-//days hours minutes seconds - all in main
-//one div each insert through dom
-// countdown 08, 23, 55, 41 
-// function setup(){
-//     displayCountdown()
-// }
+let countBox = document.querySelector(".countBox")
+let days = document.createElement("div")
+days.className = "days"
+let hours = document.createElement("div")
+hours.className = "hours"
+let minutes = document.createElement("div")
+minutes.className = "minutes"
+let seconds = document.createElement("div")
+seconds.className = "seconds"
 
+countBox.append(days)
+countBox.append(hours)
+countBox.append(minutes)
+countBox.append(seconds)
 
-function displayCountdown(){
-   let countBox = document.querySelector(".countBox")
-   let days = document.createElement("div")
-   days.className = "days"
-   let hours = document.createElement("div")
-   hours.className = "hours"
-   let minutes = document.createElement("div")
-   minutes.className = "minutes"
-   let seconds = document.createElement("div")
-   seconds.className = "seconds"
+function displayTime() {
+  let d = 8;
+  let h = 23;
+  let m = 55;
+  let s = 41;
 
-   countBox.appendChild(days)
-   countBox.append(hours)
-   countBox.append(minutes)
-   countBox.append(seconds)
-   console.log(countBox)
+  setInterval(function () {
 
-}
+    s--
 
-function displayTime(){
-    let d;
-    let h;
-    let m;
-    let s;
+    if (s == 00) {
+      m -= 1;
+      s = 59;
+      s--;
+    }
 
-    setInterval(function(){
-      // d = 8
-      // h = 23
-      // m = 55
-      // s = 41
-      
+    if (m == 00) {
+      h -= 1
+      m = 59;
+      m--
+    }
 
-  
+    if (h == 00) {
+      d -= 1
 
-      d = d < 10 ? "0" + d : d;
-      h = h < 10 ? "0" + h : h;
-      m = m < 10 ? "0" + m : m;
-      s = s < 10 ? "0" + s : s;
+    }
 
-      if(s == 00){
-        s = 59;
-        s--;
-      }else{
-        s= 0;
-      }
-      if(m == 00 ){
-        m = 59;
-        m--
-      }
-
-      // if(h == 00){
-      //     h = 23;
-      //     d --;
-      // }
-      
-
-//       console.log(d)
-//       console.log(h)
-// console.log(m)
-// console.log(s)
-    }, 1000)
     console.log(`${d} : ${h} : ${m} : ${s}`)
-     return `${d} : ${h} : ${m} : ${s}`
-    
+    days.innerHTML = d;
+    hours.innerHTML = h;
+    minutes.innerHTML = m;
+    seconds.innerHTML = s;
+
+    return `${d} : ${h} : ${m} : ${s}`
+  }, 1000)
+
+  s = s < 10 ? "0" + s : s;
+  m = m < 10 ? "0" + m : m;
+  h = h < 10 ? "0" + h : h;
+  d = d < 10 ? "0" + d : d;
+
 }
 
-displayCountdown()
 displayTime()
