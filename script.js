@@ -9,10 +9,38 @@ minutes.className = "minutes"
 let seconds = document.createElement("div")
 seconds.className = "seconds"
 
+
+let daysCount = document.createElement("p")
+    let hoursCount = document.createElement("p")
+    let minutesCount = document.createElement("p")
+    let secondsCount = document.createElement("p")
+
+    let daysText = document.createElement("div")
+    daysText.innerHTML = "DAYS"
+    let hoursText = document.createElement("p")
+    hoursText.innerHTML = "HOURS"
+    let minutesText = document.createElement("p")
+    minutesText.innerHTML = "MINUTES"
+    let secondsText = document.createElement("p")
+    secondsText.innerHTML = "SECONDS"
+
+
+
 countBox.append(days)
 countBox.append(hours)
 countBox.append(minutes)
 countBox.append(seconds)
+
+
+days.append(daysCount)
+hours.append(hoursCount)
+minutes.append(minutesCount)
+seconds.append(secondsCount)
+days.append(daysText)
+hours.append(hoursText)
+minutes.append(minutesText)
+seconds.append(secondsText)
+
 
 function displayTime() {
   let d = 8;
@@ -21,6 +49,17 @@ function displayTime() {
   let s = 41;
 
   setInterval(function () {
+
+ 
+    console.log(`${d} : ${h} : ${m} : ${s}`)
+
+
+    
+    daysCount.innerHTML = d
+    hoursCount.innerHTML = h
+    minutesCount.innerHTML = m
+    secondsCount.innerHTML = s
+
 
     s--
 
@@ -41,14 +80,13 @@ function displayTime() {
 
     }
 
-    console.log(`${d} : ${h} : ${m} : ${s}`)
-    days.innerHTML = d;
-    hours.innerHTML = h;
-    minutes.innerHTML = m;
-    seconds.innerHTML = s;
 
-    return `${d} : ${h} : ${m} : ${s}`
+
+
+
+    // return `${d} : ${h} : ${m} : ${s}`
   }, 1000)
+
 
   s = s < 10 ? "0" + s : s;
   m = m < 10 ? "0" + m : m;
