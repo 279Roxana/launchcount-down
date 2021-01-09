@@ -11,9 +11,16 @@ seconds.className = "seconds"
 
 
 let daysCount = document.createElement("p")
+daysCount.className = "daysCount"
     let hoursCount = document.createElement("p")
+    hoursCount.className = "hoursCount"
+
     let minutesCount = document.createElement("p")
+    minutesCount.className = "minutesCount"
+
     let secondsCount = document.createElement("p")
+    secondsCount.className = "secondsCount"
+
 
     let daysText = document.createElement("div")
     daysText.innerHTML = "DAYS"
